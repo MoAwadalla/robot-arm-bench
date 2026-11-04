@@ -77,15 +77,15 @@ Replays of real runs, re-simulated from the logs (not screen recordings), with t
 
 **Level 4, tower without the top camera: all five models on layout 1** (Sonnet 5.5 with default settings)
 
-![Level 4, all five models, end of the runs](media/level4_all_models.jpg)
+https://github.com/user-attachments/assets/6e421bdb-f907-44eb-a979-17abee0975b0
 
 **Level 3, messy sort: the Claude 5.5 models on layout 1**
 
-![Level 3, Claude models, end of the runs](media/level3_claude.jpg)
+https://github.com/user-attachments/assets/aad7e4a9-3fc7-4578-863b-83178d1784b9
 
 **Level 5, copy a picture: the Claude 5.5 models on layout 1**
 
-![Level 5, Claude models, end of the runs](media/level5_claude.jpg)
+https://github.com/user-attachments/assets/ae4d712f-962b-4bd7-88a6-bd6cf23b7378
 
 ## What surprised me
 
