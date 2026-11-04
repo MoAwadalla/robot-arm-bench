@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+so101/_scene_*.xml
+# new runs go here; the 46 published logs are tracked
+logs/*
+!logs/2026-10-09T15-40*.eval
+!logs/2026-10-11T06-36*.eval
+!logs/2026-10-11T18-08*.eval

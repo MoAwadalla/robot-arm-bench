@@ -1,0 +1,57 @@
+<mujoco model="blocks_cell">
+  <include file="so101.xml"/>
+
+  <statistic center="0.2 0 0.08" extent="0.6"/>
+
+  <visual>
+    <headlight diffuse="0.35 0.35 0.35" ambient="0.35 0.35 0.35" specular="0 0 0"/>
+    <global azimuth="140" elevation="-30" offwidth="1280" offheight="960"/>
+  </visual>
+
+  <asset>
+    <!-- Play mat: one light/dark square = 5 cm -->
+    <texture type="skybox" builtin="gradient" rgb1="0.75 0.82 0.90" rgb2="0.95 0.95 0.95" width="256" height="1536"/>
+    <texture type="2d" name="mat" builtin="checker" rgb1="0.86 0.86 0.82" rgb2="0.70 0.70 0.66" width="200" height="200"/>
+    <material name="mat" texture="mat" texuniform="true" texrepeat="20 20"/>
+  </asset>
+
+  <default>
+    <default class="block">
+      <geom type="box" size="0.015 0.015 0.015" condim="4" friction="1 0.02 0.002" solref="0.01 1" density="400"/>
+    </default>
+    <default class="bin_wall">
+      <geom type="box" contype="1" conaffinity="1" rgba="0.35 0.35 0.35 1"/>
+    </default>
+  </default>
+
+  <worldbody>
+    <light pos="0.2 0 1.5" dir="0 0 -1" directional="true" diffuse="0.35 0.35 0.35"/>
+    <geom name="floor" type="plane" size="1 1 0.05" material="mat"/>
+
+    <!-- Cameras. top_cam looks straight down; the arm's base is at the bottom of its image. -->
+    <camera name="top_cam" pos="0.20 0 0.65" xyaxes="0 -1 0 1 0 0" fovy="45"/>
+    <camera name="front_cam" pos="0.70 0 0.38" xyaxes="0 1 0 -0.45 0 0.9" fovy="45"/>
+
+    <!-- Bins: a coloured floor tile with low walls. Red on the arm's left (+y), blue on its right (-y). -->
+    <body name="bin_red" pos="0.16 0.17 0">
+      <geom name="bin_red_floor" type="box" size="0.055 0.055 0.001" pos="0 0 0.001" rgba="0.85 0.2 0.2 1" contype="1" conaffinity="1"/>
+      <geom class="bin_wall" size="0.055 0.003 0.012" pos="0  0.058 0.012"/>
+      <geom class="bin_wall" size="0.055 0.003 0.012" pos="0 -0.058 0.012"/>
+      <geom class="bin_wall" size="0.003 0.061 0.012" pos=" 0.058 0 0.012"/>
+      <geom class="bin_wall" size="0.003 0.061 0.012" pos="-0.058 0 0.012"/>
+    </body>
+    <body name="bin_blue" pos="0.16 -0.17 0">
+      <geom name="bin_blue_floor" type="box" size="0.055 0.055 0.001" pos="0 0 0.001" rgba="0.2 0.3 0.85 1" contype="1" conaffinity="1"/>
+      <geom class="bin_wall" size="0.055 0.003 0.012" pos="0  0.058 0.012"/>
+      <geom class="bin_wall" size="0.055 0.003 0.012" pos="0 -0.058 0.012"/>
+      <geom class="bin_wall" size="0.003 0.061 0.012" pos=" 0.058 0 0.012"/>
+      <geom class="bin_wall" size="0.003 0.061 0.012" pos="-0.058 0 0.012"/>
+    </body>
+
+    <!-- Blocks: 3 cm cubes -->
+    <body name="block_red_1" pos="0.20 0.05 0.015"><freejoint/><geom class="block" rgba="0.9 0.15 0.15 1"/></body>
+    <body name="block_blue_1" pos="0.26 -0.04 0.015"><freejoint/><geom class="block" rgba="0.15 0.3 0.9 1"/></body>
+    <body name="block_red_2" pos="0.16 -0.07 0.015"><freejoint/><geom class="block" rgba="0.9 0.15 0.15 1"/></body>
+    <body name="block_blue_2" pos="0.28 0.07 0.015"><freejoint/><geom class="block" rgba="0.15 0.3 0.9 1"/></body>
+  </worldbody>
+</mujoco>
