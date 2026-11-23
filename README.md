@@ -69,7 +69,7 @@ Score is the share of the goal reached, as a percentage, averaged over runs.
 
 Levels 1–2: all five models ran together, with medium reasoning effort. Levels 3–5: Haiku 5.5 and Opus 5.5 ran with default settings, Luna and Sol with medium reasoning effort. Sonnet 5.5 ran each layout twice, once each way, and its column averages both.
 
-From pictures alone, GPT-6.1 Sol did best on the harder levels at 85%, with Claude Sonnet 5.5 and Claude Opus 5.5 tied at 78%. Given the block positions, Claude Opus 5.5 did best at 96%, so for most models the hard part was finding the blocks in the pictures, not moving the arm. The tower without the top camera was the hardest level for every model; no model averaged above 67% on it from pictures. Claude Sonnet 5.5 was faster than both OpenAI models on every level, often 2 to 7 times faster.
+From pictures alone, GPT-6.1 Sol did best on the harder levels at 85%, with Claude Sonnet 5.5 and Claude Opus 5.5 tied at 78%. Given the block positions, Claude Opus 5.5 did best at 96%. The positions helped Claude Haiku 5.5 (+26 points) and Claude Opus 5.5 (+18) the most, so most of their misses came from finding the blocks in the pictures, not from moving the arm. The other three models changed by 4 points or less. The tower without the top camera was the hardest level for every model; no model averaged above 67% on it from pictures. Claude Sonnet 5.5 was faster than both OpenAI models on every level, often 2 to 7 times faster.
 
 ## Videos
 
@@ -105,7 +105,7 @@ https://github.com/user-attachments/assets/ae4d712f-962b-4bd7-88a6-bd6cf23b7378
 
 ## What's next
 
-When a model can do a task by controlling the arm itself, can it train a small neural network to do the same task on its own, with no AI in the loop, even from camera pictures? That's the next project, [robot-arm-teach](https://github.com/MoAwadalla/robot-arm-teach).
+When a model can do a task by controlling the arm itself, can it train a small neural network to do the same task on its own, with no large language model in the loop, even from camera pictures? That's the next project, [robot-arm-teach](https://github.com/MoAwadalla/robot-arm-teach).
 
 
 ## Running it
